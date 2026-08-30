@@ -9,7 +9,12 @@ class Settings(BaseSettings):
 
     # LLM Config
     api_key: str
-    model: str
+    llm_base_url: str
+    llm_model: str
+    llm_temperature: float
+    llm_max_tokens: int
+    llm_max_iterations: int = 3
+    
 
     # RAG Config
     chunk_size: int = 1000

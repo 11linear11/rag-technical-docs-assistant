@@ -5,7 +5,12 @@ from langchain_core.tools import tool
 
 @tool
 def retriever_tool(query: str, k: int = 3):
-    """Tool to retrieve documents from the vector store"""
+    """Search and retrieve technical documentation from the vector store.
+
+    Args:
+        query: The reformulated, concise technical search query representing the user's core intent (e.g., 'FastAPI custom exception handler', 'Pydantic BaseSettings env configuration'). Do NOT pass raw conversational input directly.
+        k: Number of relevant documentation chunks to retrieve (default: 3).
+    """
     docs = retriever.retrieve(query, k=k)
     if not docs:
         return "No documents found"
@@ -17,6 +22,4 @@ def retriever_tool(query: str, k: int = 3):
     return context
 
 
-if __name__ == "__main__":
-    result = retriever_tool.invoke({"query": "How to handle exceptions?", "k": 2})
-    print(result)
+

@@ -37,11 +37,3 @@ class ContextRetriever:
         return self.vec_store.similarity_search(query, k=k)
 
 retriever = ContextRetriever()
-    
-
-
-if __name__ == "__main__":
-    results = retriever.retrieve("How to handle exceptions?", k=2)
-    print(f"Results found: {len(results)}")
-    if results:
-        print("First result snippet:", results[0].page_content[:150])
