@@ -25,12 +25,3 @@ class DocProcessor:
         return text_splitter.split_documents(docs)
 
 
-if __name__ == "__main__":
-    doc_processor = DocProcessor()
-    chunks = doc_processor.process_docs()
-    print(f"Total Chunks Created: {len(chunks)}")
-    if chunks:
-        print("\n--- First Chunk Metadata ---")
-        print(chunks[0].metadata)
-        print("\n--- First Chunk Preview ---")
-        print(chunks[0].page_content[:200])
