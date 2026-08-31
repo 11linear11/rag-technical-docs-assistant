@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     app_name: str = "Technical Documentation Assistant"
     app_version: str = "1.0.0"
     app_environment: str = "development" # development,production
+    app_description: str = "just a assistant"
 
     # LLM Config
     api_key: str
